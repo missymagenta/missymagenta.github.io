@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/*https://www.codesmite.com/article/how-to-create-pure-css-hexagonal-grids */
+
+.nav-headline {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: right;
+}
+
+@media (max-width: 575.98px) {
+  .nav-headline {
+    font-size: 20px;
+  }
+  ul#grid.clear {
+    margin-right: 20%;
+  }
+  a.door {
+    margin-top: 40%;
+    font-size: 20px;
+  }
+}
+
+
+.container-fluid {
+      position:absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      height:100%;
+      width:100%;
+
+      padding: 10px 0 50px 0;
+      overflow-x: hidden;
+}
+
+#grid {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 0; /* Clears unordered list default of 40px */
+  position: relative;
+  float: right;
+  width: 60%;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#grid li {
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 27.85714285714286%;
+    padding: 0 0 32.16760145166612% 0;
+    -o-transform: rotate(-60deg) skewY(30deg);
+    -moz-transform: rotate(-60deg) skewY(30deg);
+    -webkit-transform: rotate(-60deg) skewY(30deg);
+    -ms-transform: rotate(-60deg) skewY(30deg);
+    transform: rotate(-60deg) skewY(30deg);
+    background: #fd005f;
+}
+
+
+#grid li .hexagon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fdbf00;
+    -o-transform: skewY(-30deg) rotate(60deg);
+    -moz-transform: skewY(-30deg) rotate(60deg);
+    -webkit-transform: skewY(-30deg) rotate(60deg);
+    -ms-transform: skewY(-30deg) rotate(60deg);
+    transform: skewY(-30deg) rotate(60deg);
+    overflow: hidden;
+}
+
+
+#grid li {
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 27.85714285714286%;
+    padding: 0 0 32.16760145166612% 0;
+    -o-transform: rotate(-60deg) skewY(30deg);
+    -moz-transform: rotate(-60deg) skewY(30deg);
+    -webkit-transform: rotate(-60deg) skewY(30deg);
+    -ms-transform: rotate(-60deg) skewY(30deg);
+    transform: rotate(-60deg) skewY(30deg);
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+#grid li * {
+    visibility: visible;
+}
+
+#grid li:nth-child(2) {
+  margin: 0 1%;
+}
+
+
+#grid li:nth-child(3n+2) {
+  margin: 0 1%;
+}
+
+#grid li:nth-child(6n+4), #grid li:nth-child(6n+5), #grid li:nth-child(6n+6) {
+    margin-top: -6.9285714285%;
+    margin-bottom: -6.9285714285%;
+    -o-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    -moz-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+}
+
+#grid li:nth-child(6n+4) {
+    margin-left: 0.5%;
+}
+
+.door {
+  /* positioning */
+  position: absolute;
+  height: 60px; /* font-size */
+  width: 100px;
+  margin-left: calc(50% - 50px);
+  margin-top: calc(50% - 20px);
+
+  /* font styles */
+  font-size: 60px; /* height */
+  line-height: 1;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  letter-spacing: -.1em;
+}
+
+a.door:hover {
+  color: grey !important;
+}
+
+#ribbon {
+      height: 383px;
+      width: 233px;
+      border-right: solid #fdbf00;
+    }
+
+#globe {
+      margin-top: 0px;
+      margin-left: 110px;
+      border: solid #fdbf00;
+      width: 245px;
+      height: 245px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    .wrapper {
+      display: none;
+    }
+
+@media (min-width: 1025px) {
+  .wrapper {
+    display: block;
+  }
+}
+
+
+.greetings {
+  /* font styles */
+  margin-top: 75px;
+  font-size: 40px; /* height */
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  letter-spacing: -.1em;
+}
+
+
+/*door style */
+
+#hexagon {
+  width: 100px;
+  height: 55px;
+  background: #fdbf00;
+  position: relative;
+  float:right;
+  margin-top: 220px;
+  margin-right: 30px;
+  font-size: 40px; /* height */
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  letter-spacing: -.1em;
+  z-index: 3;
+}
+
+#hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid #fdbf00;
+}
+
+
+#hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px; left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid #fdbf00;
+}
+
+@media (min-width: 1025px) {
+.frame {
+  position: relative;
+  border: 2px solid #fdbf00;
+  width: 595px;
+  height: auto;
+  margin: 20px 155px 100px 535px;
+ }
+}
+
+@media (max-width: 1025px) {
+.frame {
+  width: 90%;
+  height: auto;
+  position: relative;
+  border: 2px solid #fdbf00;
+  margin-top: 0%;
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow-y: auto;
+ }
+
+ #poem {
+   padding: 0% 3% 3% 3%;
+   padding-top: 10px;
+   color: white;
+   word-wrap: break-word;
+   font-size: 2.5vw;
+   text-align: left;
+ }
+
+ #doorno {
+   color: #fdbf00;
+   font-size: 20px;
+   position: relative;
+   margin-left: 88%;
+   width: 4%;
+   font-weight: bolder;
+ }
+}
+
+#poem {
+  padding-top: 30px;
+  color: white;
+}
