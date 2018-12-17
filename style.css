@@ -25,9 +25,10 @@ body {
 @media (max-width: 575.98px) {
   .nav-headline {
     font-size: 20px;
+
   }
   ul#grid.clear {
-    margin-right: 20%;
+    margin-right: 3%;
   }
   a.door {
     margin-top: 40%;
@@ -284,4 +285,8 @@ a.door:hover {
 #poem {
   padding-top: 30px;
   color: white;
+}
+
+a:visited {
+  color:grey;
 }
